@@ -47,5 +47,13 @@ Herkes kendi hesabını kullanır, kimse kimsenin hesabından harcamaz.
 ## Notlar
 
 - İşçiler komut çalıştıramaz. Build, test ve render işlerini Claude yapar ve sonucu kontrol eder.
-- Routeway'de `/v1/messages` adresinde bazı modeller 502 hatası veriyor: `glm-5.3-flash`, `minimax-m3.1-flash:free`, `deepseek-v4.1-flash:free`. Bunlar devre dışı.
+- Ekipteki tüm modeller test edildi ve çalışıyor. Aşağıdaki 3 model ekipte yok: Routeway tarafında bozuk oldukları için yerlerine başka modeller kullanılıyor (Kasım 2026'da test edildi):
+
+  | Bozuk model | Sorun | Yerine kullanılan |
+  |---|---|---|
+  | `glm-5.3-flash` | Claude Code'un kullandığı adreste 502 hatası | MiMo (`mimo-v2.6-flash`), neredeyse aynı fiyat |
+  | `minimax-m3.1-flash:free` | Routeway'de şu an çalışmıyor | Ücretli sürümü `minimax-m3.1-flash` |
+  | `deepseek-v4.1-flash:free` | Routeway'de şu an çalışmıyor | Ücretli sürümü `deepseek-v4.1-flash-1017` |
+
+  Routeway bunları düzeltirse ekibe geri eklenebilir.
 - Loglar `%USERPROFILE%\.claude\cemaat\logs` klasörüne yazılır.
