@@ -17,7 +17,9 @@ if (-not (Test-Path "C:\Program Files\Blender Foundation")) { winget install --i
 $env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [Environment]::GetEnvironmentVariable("Path", "User")
 
 if (-not (Has claude)) { npm install -g @anthropic-ai/claude-code }
-python -m pip install --user edge-tts "rembg[cpu]"
+python -m pip install --user edge-tts "rembg[cpu]" faster-whisper
+# GPU (NVIDIA) speed-up for transcription; harmless without an NVIDIA card (falls back to CPU).
+python -m pip install --user nvidia-cublas-cu12 "nvidia-cudnn-cu12==9.*"
 
 Write-Host ""
 Write-Host "== Done ==" -ForegroundColor Green

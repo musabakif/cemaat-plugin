@@ -39,6 +39,9 @@ Worker logs: `$HOME\.claude\cemaat\logs\`
     `powershell -NoProfile -ExecutionPolicy Bypass -File "$S\make-3d.ps1" -Script "<project>\3d\tree.py" -Out "<project>\assets\tree.glb"`
   - Voice-over (TTS): `gen-voice.ps1` (edge-tts, free; writes MP3 + SRT subtitles). Turkish voices: `tr-TR-AhmetNeural`, `tr-TR-EmelNeural`.
     `powershell -NoProfile -ExecutionPolicy Bypass -File "$S\gen-voice.ps1" -Voice tr-TR-EmelNeural -Text "<text>" -Out "<project>\audio\vo.mp3"` (long scripts: `-TextFile`)
+  - Transcription (speech-to-text, free, local): `transcribe.py` (faster-whisper `large-v3-turbo`, GPU if available). Writes `<name>.srt`, `<name>.txt` (`[hh:mm:ss] text` lines) and `<name>.json` (segments). Use it first on any talk/interview/sermon video: chapters, titles, overlay timing and subtitles all come from the transcript. Roughly 3-6 min per hour of audio on GPU, much slower on CPU (run long files with `run_in_background`).
+    `python "$S\transcribe.py" "<video or audio>" "<project>\transcript" --lang tr`
+    Chaptering: give the `.txt` to `minimax` (or `gemma` for short files; it has a 62k context, so split long transcripts) to propose chapters with start times and short titles; check them against the transcript yourself.
   - ffmpeg/ffprobe are installed (winget, Gyan.FFmpeg). If not on PATH in an old shell, reload PATH from Machine+User.
   - AI-generated video and music: Routeway has none. Nim plugin can do video if the user connects it via /mcp. Otherwise tell the user; do not sign up for services yourself.
   - Yourself: architecture, cross-cutting or risky changes, anything security-sensitive, anything a worker failed twice.

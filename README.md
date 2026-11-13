@@ -16,7 +16,7 @@ Claude Code için çok modelli ajan ekibi. Claude (orkestratör) görevi planlar
 | MiniMax | minimax-m3.1-flash | Video kurgu planı | $0.15 / $0.60 |
 | Gemma | gemma-4-26b-a4b-it-luminous:free | Senaryo, metin, diyalog | Ücretsiz |
 
-Araçlar: resim üretimi (Routeway, resim başı ~$0.001–0.06), 2D sprite (şeffaf PNG), 3D model (Blender, GLB), seslendirme (edge-tts, ücretsiz), video işleme (ffmpeg).
+Araçlar: resim üretimi (Routeway, resim başı ~$0.001–0.06), 2D sprite (şeffaf PNG), 3D model (Blender, GLB), seslendirme (edge-tts, ücretsiz), konuşmayı yazıya dökme (Whisper, ücretsiz, bilgisayarda çalışır), video işleme (ffmpeg).
 
 ## Maliyet
 
