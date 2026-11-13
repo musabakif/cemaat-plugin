@@ -1,0 +1,13 @@
+﻿{
+  "name": "cemaat",
+  "owner": { "name": "musabakif" },
+  "metadata": { "description": "Cemaat: Claude orchestrates a team of cheap AI workers (Routeway) for code, games, video, images, 2D/3D assets and voice." },
+  "plugins": [
+    {
+      "name": "cemaat",
+      "source": "./plugins/cemaat",
+      "description": "Multi-model agent team: Claude plans and verifies, cheap Routeway models do the work.",
+      "version": "1.0.0"
+    }
+  ]
+}

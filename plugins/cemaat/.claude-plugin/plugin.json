@@ -1,0 +1,8 @@
+﻿{
+  "name": "cemaat",
+  "version": "1.0.0",
+  "author": { "name": "musabakif", "url": "https://github.com/musabakif" },
+  "homepage": "https://github.com/musabakif/cemaat-plugin",
+  "description": "Multi-model agent team: Claude plans and verifies, cheap Routeway models (MiMo, DeepSeek, MiniMax, Gemma) do the work. Images, 2D sprites, 3D (Blender), voice (edge-tts), video (ffmpeg).",
+  "keywords": ["orchestration", "agents", "routeway", "game", "video", "3d"]
+}
