@@ -8,8 +8,12 @@
     "deepseek": { "provider": "routeway", "id": "deepseek-v4.1-flash-1017", "role": "code (second opinion, hard bugs)", "price": "0.20 in / 0.65 out per 1M" },
     "mimo": { "provider": "routeway", "id": "mimo-v2.6-flash", "role": "games, plugins/extensions, motion graphics code (Remotion/HTML/Manim)", "price": "0.14 in / 0.28 out per 1M" },
     "glm": { "provider": "routeway", "id": "glm-5.3-flash", "role": "DISABLED: Routeway /v1/messages returns 502 for glm-5.3-flash (tested 2026-11-13); retry later", "price": "0.10 in / 0.30 out per 1M" },
+    "mercury": { "provider": "routeway", "id": "mercury-2.5-preview", "role": "cheapest and fastest coder: small fixes, bulk mechanical edits, quick drafts (diffusion model, ~1000 tok/s; preview, no benchmarks); 260k context; no image input", "price": "0.04 in / 0.15 out per 1M" },
+    "luna": { "provider": "routeway", "id": "gpt-6-luna-pro", "role": "reasoning-heavy code and logic, architecture-level second opinion, tasks with screenshots/images; 1M context", "price": "0.10 in / 0.50 out per 1M" },
+    "guvenlik": { "provider": "routeway", "id": "glm-5.3-flash-cybersecurity", "role": "defensive security: secure-code review, vulnerability finding in the user's own code, dependency/config audit, incident analysis; use -Mode read; slow (~5 min per review)", "price": "0.15 in / 0.50 out per 1M" },
     "minimax": { "provider": "routeway", "id": "minimax-m3.1-flash", "role": "video editing (frames, ffmpeg scripts, edit plans)", "price": "0.15 in / 0.60 out per 1M" },
     "gemma": { "provider": "routeway", "id": "gemma-4-26b-a4b-it-luminous:free", "role": "free writer: video scripts, voice-over text, game dialogue, descriptions, small read/summarize tasks; NOT code; 62k context; 20 req/min, 200 req/day", "price": "free" },
+    "laguna": { "provider": "routeway", "id": "laguna-s-2.1", "role": "DISABLED: no /v1/messages support on Routeway (400), chat/completions returned 502 (tested 2026-11-14)", "price": "0.10 in / 0.20 out per 1M" },
     "minimax-free": { "provider": "routeway", "id": "minimax-m3.1-flash:free", "role": "DISABLED: Routeway /v1/messages returns 502 for :free models (tested 2026-11-13); only works via chat/completions", "price": "free" }
   },
   "imageModels": {

@@ -12,7 +12,10 @@ Claude Code için çok modelli ajan ekibi. Claude (orkestratör) görevi planlar
 |---|---|---|---|
 | Orkestratör | Claude (senin planın) | Plan, kontrol, teslim | Claude planın |
 | MiMo | mimo-v2.6-flash | Kod, oyun, eklenti, motion grafik, 3D script | $0.14 / $0.28 |
-| DeepSeek | deepseek-v4.1-flash-1017 | Zor hatalar, ikinci görüş | $0.20 / $0.65 |
+| Mercury | mercury-2.5-preview | Hızlı ve en ucuz: küçük düzeltmeler, toplu değişiklikler | $0.04 / $0.15 |
+| DeepSeek | deepseek-v4.1-flash-1017 | Zor hatalar | $0.20 / $0.65 |
+| Luna Pro | gpt-6-luna-pro | Mantık ağırlıklı kod, ikinci görüş, ekran görüntülü işler | $0.10 / $0.50 |
+| Güvenlik | glm-5.3-flash-cybersecurity | Kendi kodunda güvenlik açığı taraması | $0.15 / $0.50 |
 | MiniMax | minimax-m3.1-flash | Video kurgu planı | $0.15 / $0.60 |
 | Gemma | gemma-4-26b-a4b-it-luminous:free | Senaryo, metin, diyalog | Ücretsiz |
 
@@ -62,6 +65,7 @@ Herkes kendi hesabını kullanır, kimse kimsenin hesabından harcamaz.
   | `glm-5.3-flash` | Claude Code'un kullandığı adreste 502 hatası | MiMo (`mimo-v2.6-flash`), neredeyse aynı fiyat |
   | `minimax-m3.1-flash:free` | Routeway'de şu an çalışmıyor | Ücretli sürümü `minimax-m3.1-flash` |
   | `deepseek-v4.1-flash:free` | Routeway'de şu an çalışmıyor | Ücretli sürümü `deepseek-v4.1-flash-1017` |
+  | `laguna-s-2.1` | Claude Code'un kullandığı adresi desteklemiyor | MiMo ve Mercury |
 
   Routeway bunları düzeltirse ekibe geri eklenebilir.
 - Loglar `%USERPROFILE%\.claude\cemaat\logs` klasörüne yazılır.

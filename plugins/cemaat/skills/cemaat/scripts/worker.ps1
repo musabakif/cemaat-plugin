@@ -88,6 +88,8 @@ try {
   $job = Start-Job -ScriptBlock {
     param($dir, $prompt, $modelId, $maxTurns, $toolArgs)
     Set-Location $dir
+    # claude prints UTF-8; without this, Windows PowerShell decodes it with the OEM code page (garbled dashes/Turkish letters).
+    [Console]::OutputEncoding = [Text.Encoding]::UTF8
     & claude -p $prompt --model $modelId --max-turns $maxTurns --output-format text @toolArgs 2>&1 | ForEach-Object { "$_" }
     "__EXIT__$LASTEXITCODE"
   } -ArgumentList $Dir, $prompt, $modelId, $MaxTurns, $toolArgs
