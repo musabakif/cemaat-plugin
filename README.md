@@ -18,6 +18,10 @@ Claude Code için çok modelli ajan ekibi. Claude (orkestratör) görevi planlar
 
 Araçlar: resim üretimi (Routeway, resim başı ~$0.001–0.06), 2D sprite (şeffaf PNG), 3D model (Blender, GLB), seslendirme (edge-tts, ücretsiz), konuşmayı yazıya dökme (Whisper, ücretsiz, bilgisayarda çalışır), video işleme (ffmpeg).
 
+İsteğe bağlı ücretsiz yerel araçlar (`install-ml.ps1`, ~5 GB, NVIDIA ekran kartı önerilir):
+- **Müzik** (MusicGen): Arka plan müziği, oyun döngüleri. Lisansı ticari olmayan kullanım içindir (CC-BY-NC 4.0): para kazanılan işlerde kullanılmamalı.
+- **Resimden 3D** (TripoSR): Tek bir karakter ya da eşya resminden GLB model üretir.
+
 ## Maliyet
 
 Herkes kendi hesabını kullanır, kimse kimsenin hesabından harcamaz.
@@ -43,6 +47,10 @@ Herkes kendi hesabını kullanır, kimse kimsenin hesabından harcamaz.
    /plugin install cemaat@cemaat
    ```
 4. Claude uygulamasını tamamen kapatıp yeniden aç.
+5. İsteğe bağlı: Müzik ve resimden 3D için:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File install-ml.ps1
+   ```
 
 ## Notlar
 

@@ -42,8 +42,14 @@ Worker logs: `$HOME\.claude\cemaat\logs\`
   - Transcription (speech-to-text, free, local): `transcribe.py` (faster-whisper `large-v3-turbo`, GPU if available). Writes `<name>.srt`, `<name>.txt` (`[hh:mm:ss] text` lines) and `<name>.json` (segments). Use it first on any talk/interview/sermon video: chapters, titles, overlay timing and subtitles all come from the transcript. Roughly 3-6 min per hour of audio on GPU, much slower on CPU (run long files with `run_in_background`).
     `python "$S\transcribe.py" "<video or audio>" "<project>\transcript" --lang tr`
     Chaptering: give the `.txt` to `minimax` (or `gemma` for short files; it has a 62k context, so split long transcripts) to propose chapters with start times and short titles; check them against the transcript yourself.
+  - Optional ML tools (free, local; installed by `install-ml.ps1` into `$HOME\.claude\cemaat\venv-ml`). If that venv is missing, tell the user to run `install-ml.ps1` from the cemaat-plugin repo.
+    - Music: `gen-music.py` (Meta MusicGen). Up to 30 s per call; English prompts; join several clips with ffmpeg `acrossfade` for longer tracks. ~25 s per 10 s clip on GPU (`--model small`), `--model medium` is better but slower. Quality is fair (background music, game loops), not studio level.
+      LICENSE: MusicGen weights are CC-BY-NC 4.0, non-commercial only. Before using its music in anything monetized or sold (paid game, monetized YouTube), tell the user and suggest a licensed source instead.
+      `& "$HOME\.claude\cemaat\venv-ml\Scripts\python.exe" "$S\gen-music.py" "calm ney flute and oud, meditative, no drums" "<project>\audio\bg.wav" --seconds 20`
+    - Image to 3D: `image-to-3d.ps1` (TripoSR, MIT license). Input: one subject on a plain/transparent background (use `gen-sprite.ps1` output). Output: GLB with vertex colors + `<name>.preview.png`. ~30 s per model on GPU. Good for game props and stylized characters; surfaces are blobby, and the back side is guessed. Look at the preview before delivering.
+      `powershell -NoProfile -ExecutionPolicy Bypass -File "$S\image-to-3d.ps1" -Image "<project>\assets\hero.png" -Out "<project>\assets\hero.glb"`
   - ffmpeg/ffprobe are installed (winget, Gyan.FFmpeg). If not on PATH in an old shell, reload PATH from Machine+User.
-  - AI-generated video and music: Routeway has none. Nim plugin can do video if the user connects it via /mcp. Otherwise tell the user; do not sign up for services yourself.
+  - AI-generated video: Routeway has none. Nim plugin can do video if the user connects it via /mcp. Otherwise tell the user; do not sign up for services yourself.
   - Yourself: architecture, cross-cutting or risky changes, anything security-sensitive, anything a worker failed twice.
 - Show the user the plan as the task list (update_plan), with the worker named on each step.
 
